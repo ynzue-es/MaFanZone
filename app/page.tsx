@@ -42,7 +42,7 @@ export default async function Home() {
           <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
             <a href="#concept" className="transition hover:text-marine">Le concept</a>
             <a href="#etapes" className="transition hover:text-marine">Comment ça marche</a>
-            <a href="#realisations" className="transition hover:text-marine">Réalisations</a>
+            <a href="#prestation" className="transition hover:text-marine">La prestation</a>
           </nav>
 
           <a
@@ -241,7 +241,7 @@ export default async function Home() {
         </section>
 
         {/* ===== Ce qu'on fournit ===== */}
-        <section className="bg-white px-5 py-20 sm:py-28">
+        <section id="prestation" className="bg-white px-5 py-20 sm:py-28">
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
             <Reveal className="order-2 lg:order-1">
               <div className="relative">
