@@ -15,10 +15,65 @@ const bricolage = Bricolage_Grotesque({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const SITE_URL = "https://mafanzone.fr";
+const TITLE = "MaFanZone — Location d’écrans géants LED pour fan zones";
+const DESCRIPTION =
+  "Location d’écrans géants LED clé en main pour associations, clubs de sport et comités des fêtes. Réunissez vos supporters devant les grands matchs. Devis gratuit dans l’Ain, le Rhône, le Jura et le Bugey.";
+
 export const metadata: Metadata = {
-  title: "MaFanZone — Écrans géants LED pour vos fan zones",
-  description:
-    "Location d'écrans géants LED clé en main pour associations, clubs de sport et comités des fêtes. Réunissez vos supporters devant les grands matchs. Devis gratuit dans l'Ain, le Rhône, le Jura et le Bugey.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s · MaFanZone",
+  },
+  description: DESCRIPTION,
+  applicationName: "MaFanZone",
+  keywords: [
+    "écran géant LED",
+    "location écran géant",
+    "fan zone",
+    "diffusion match",
+    "écran géant événement",
+    "club de sport",
+    "comité des fêtes",
+    "association",
+    "Ain",
+    "Rhône",
+    "Jura",
+    "Bugey",
+  ],
+  authors: [{ name: "MaFanZone" }],
+  creator: "MaFanZone",
+  publisher: "MaFanZone",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: SITE_URL,
+    siteName: "MaFanZone",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "business",
+  // Vérification Google Search Console : faite via l'enregistrement DNS TXT
+  // (côté registrar), donc pas de balise meta nécessaire ici.
 };
 
 export default function RootLayout({
