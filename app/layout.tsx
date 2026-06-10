@@ -76,6 +76,20 @@ export const metadata: Metadata = {
   // (côté registrar), donc pas de balise meta nécessaire ici.
 };
 
+// Données structurées : aide Google à associer le logo et les infos à la marque.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "MaFanZone",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.png`,
+  image: `${SITE_URL}/opengraph-image`,
+  description: DESCRIPTION,
+  email: "yannis.nzuepro@gmail.com",
+  areaServed: ["Ain", "Rhône", "Jura", "Bugey"],
+  slogan: "Faites vivre les grands matchs à vos supporters",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -83,7 +97,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${bricolage.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
